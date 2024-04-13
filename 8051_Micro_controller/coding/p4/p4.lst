@@ -1,0 +1,210 @@
+
+C51ASM V1.2             Copyright (c) 2009 Atmel Corp.            PAGE 1
+
+
+
+
+
+        8051 Macro Assembler   C 5 1 A S M   V 1.2
+        ==========================================
+
+
+
+        Source File:     C:\p4.msa
+        Object File(s):  C:\p4.hex
+        List File:       C:\p4.lst
+
+
+
+ Line    I  Addr Code           Source
+
+    1:           N      8200    org 8200h
+    2:                          
+    3:      8200 74 FE          mov a,#11111110b
+    4:                          
+    5:                          main:
+    6:      8202 7B 07          	mov r3,#7
+    7:                          loop:
+    8:      8204 F5 90          	mov p1,a
+    9:      8206 23             	rl a
+   10:      8207 12 82 18       	call srit
+   11:      820A DB F8          	djnz r3,loop
+   12:      820C 7B 07          	mov r3,#7
+   13:                          loop1:
+   14:      820E F5 90          	mov p1,a
+   15:      8210 03             	rr a
+   16:      8211 12 82 18       	call srit
+   17:      8214 DB F8          	djnz r3,loop1
+   18:      8216 80 EA          	jmp main
+   19:                          
+   20:                          srit:
+   21:      8218 7A 03          	mov r2,#3
+   22:                          lr:
+   23:      821A 79 00          	mov r1,#0
+   24:                          ld:
+   25:      821C 78 00          	mov r0,#0
+   26:      821E D8 FE          	djnz r0,$
+   27:      8220 D9 FA          	djnz r1,ld
+   28:      8222 DA F6          	djnz r2,lr
+   29:      8224 22             	ret
+   30:                          end
+
+C51ASM V1.2             Copyright (c) 2009 Atmel Corp.            PAGE 2
+
+
+
+
+Segment usage:
+   Code      :     37 bytes
+   Data      :      0 bytes
+   Idata     :      0 bytes
+   Edata     :      0 bytes
+   Fdata     :      0 bytes
+   Xdata     :      0 bytes
+   Bit       :      0 bits
+
+   Register banks used: ---
+
+   Warnings: 0
+   Errors:   0
+
+
+C51ASM V1.2             Copyright (c) 2009 Atmel Corp.            PAGE 3
+
+
+
+              L I S T   O F   S Y M B O L S
+              =============================
+
+
+SYMBOL                           TYPE     VALUE     LINE
+--------------------------------------------------------
+??C51ASM                         NUMBER   8051
+??CODE_SIZE                      NUMBER   0000
+??DEVICE                         NUMBER   0000
+??ERAM_SIZE                      NUMBER   0000
+??FDATA_SIZE                     NUMBER   0000
+??RAM_SIZE                       NUMBER   0100
+??VERSION                        NUMBER   0120
+??_AT89C2051_                    NUMBER   001B
+??_AT89C4051_                    NUMBER   001C
+??_AT89C51ED2_                   NUMBER   0026
+??_AT89C51IC2_                   NUMBER   0024
+??_AT89C51ID2_                   NUMBER   0025
+??_AT89C51RB2_                   NUMBER   0021
+??_AT89C51RC2_                   NUMBER   0022
+??_AT89C51RC_                    NUMBER   0020
+??_AT89C51RD2_                   NUMBER   0023
+??_AT89C51_                      NUMBER   001D
+??_AT89C52_                      NUMBER   001E
+??_AT89C55WD_                    NUMBER   001F
+??_AT89LP2052_                   NUMBER   0001
+??_AT89LP213_                    NUMBER   0003
+??_AT89LP214_                    NUMBER   0004
+??_AT89LP216_                    NUMBER   0005
+??_AT89LP3240_                   NUMBER   000A
+??_AT89LP4052_                   NUMBER   0002
+??_AT89LP428_                    NUMBER   0006
+??_AT89LP51ED2_                  NUMBER   0011
+??_AT89LP51IC2_                  NUMBER   000E
+??_AT89LP51ID2_                  NUMBER   0010
+??_AT89LP51RB2_                  NUMBER   000C
+??_AT89LP51RC2_                  NUMBER   000D
+??_AT89LP51RD2_                  NUMBER   000F
+??_AT89LP51_                     NUMBER   0007
+??_AT89LP52_                     NUMBER   0008
+??_AT89LP6440_                   NUMBER   000B
+??_AT89LP828_                    NUMBER   0009
+??_AT89LS51_                     NUMBER   0019
+??_AT89LS52_                     NUMBER   001A
+??_AT89S2051_                    NUMBER   0012
+??_AT89S4051_                    NUMBER   0013
+??_AT89S51_                      NUMBER   0014
+??_AT89S52_                      NUMBER   0015
+??_AT89S53_                      NUMBER   0016
+??_AT89S8252_                    NUMBER   0017
+??_AT89S8253_                    NUMBER   0018
+??_DEFAULT_                      NUMBER   0000
+AC                               BIT        D6
+ACC                              DATA       E0
+B                                DATA       F0
+CY                               BIT        D7
+DPH                              DATA       83
+DPL                              DATA       82
+EA                               BIT        AF
+ES                               BIT        AC
+ET0                              BIT        A9
+
+C51ASM V1.2             Copyright (c) 2009 Atmel Corp.            PAGE 4
+
+
+
+SYMBOL                           TYPE     VALUE     LINE
+--------------------------------------------------------
+ET1                              BIT        AB
+EX0                              BIT        A8
+EX1                              BIT        AA
+F0                               BIT        D5
+IE                               DATA       A8
+IE0                              BIT        89
+IE1                              BIT        8B
+INT0                             BIT        B2
+INT1                             BIT        B3
+IP                               DATA       B8
+IT0                              BIT        88
+IT1                              BIT        8A
+LD                               CODE     821C        24
+LOOP                             CODE     8204         7
+LOOP1                            CODE     820E        13
+LR                               CODE     821A        22
+MAIN                             CODE     8202         5
+OV                               BIT        D2
+P                                BIT        D0
+P0                               DATA       80
+P1                               DATA       90
+P2                               DATA       A0
+P3                               DATA       B0
+PCON                             DATA       87
+PS                               BIT        BC
+PSW                              DATA       D0
+PT0                              BIT        B9
+PT1                              BIT        BB
+PX0                              BIT        B8
+PX1                              BIT        BA
+RB8                              BIT        9A
+RD                               BIT        B7
+REN                              BIT        9C
+RI                               BIT        98
+RS0                              BIT        D3
+RS1                              BIT        D4
+RXD                              BIT        B0
+SBUF                             DATA       99
+SCON                             DATA       98
+SM0                              BIT        9F
+SM1                              BIT        9E
+SM2                              BIT        9D
+SP                               DATA       81
+SRIT                             CODE     8218        20
+T0                               BIT        B4
+T1                               BIT        B5
+TB8                              BIT        9B
+TCON                             DATA       88
+TF0                              BIT        8D
+TF1                              BIT        8F
+TH0                              DATA       8C
+TH1                              DATA       8D
+TI                               BIT        99
+TL0                              DATA       8A
+TL1                              DATA       8B
+TMOD                             DATA       89
+TR0                              BIT        8C
+TR1                              BIT        8E
+TXD                              BIT        B1
+
+C51ASM V1.2             Copyright (c) 2009 Atmel Corp.            PAGE 5
+
+
+
+SYMBOL                           TYPE     VALUE     LINE
+--------------------------------------------------------
+WR                               BIT        B6

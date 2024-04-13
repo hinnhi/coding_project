@@ -1,0 +1,30 @@
+org 8200h
+
+mov a,#11111110b
+
+main:
+	mov r3,#7
+loop:
+	mov p1,a
+	rl a
+	call srit
+	djnz r3,loop
+	mov r3,#7
+loop1:
+	mov p1,a
+	rr a
+	call srit
+	djnz r3,loop1
+	jmp main
+
+srit:
+	mov r2,#3
+lr:
+	mov r1,#0
+ld:
+	mov r0,#0
+	djnz r0,$
+	djnz r1,ld
+	djnz r2,lr
+	ret
+end
