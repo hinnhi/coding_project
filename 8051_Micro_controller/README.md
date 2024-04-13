@@ -1,5 +1,5 @@
 # 8051 Micro-controller
-![image](https://github.com/hinnhi/coding_project/assets/163904638/6bd8a6f0-8f20-44c3-920c-805730dda554)
+The C51ASM assembler is a two-pass macro assembler for the AT89 Family of 8051 microcontrollers with specific features for the AT89LP single-cycle devices. C51ASM is installed as a part of the AT89LP Developer Studio. It is also available separately for the Microsoft Windows and Linux platforms.
 
 ## [AT89S52](https://ww1.microchip.com/downloads/en/DeviceDoc/doc1919.pdf) from Atmel
 The [8051 architecture](https://en.wikipedia.org/wiki/MCS-51) was created by Intel in the last 70's. Ok, it's an old architecture, but very simple to understand, and easy to use. 
