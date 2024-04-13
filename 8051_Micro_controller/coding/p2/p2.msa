@@ -1,0 +1,19 @@
+org 8200h
+
+loop:
+	setb P1.0
+	mov r0,#114
+	call srit
+	clr P1.0
+	mov r0,#114
+	call srit
+	mov r0,#114
+	call srit
+	mov r0,#114
+	call srit
+	jmp loop
+srit:
+	djnz r0,$
+	ret
+
+end
