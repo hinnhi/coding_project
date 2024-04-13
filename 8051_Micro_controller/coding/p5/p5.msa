@@ -1,0 +1,18 @@
+org 8200h
+
+LED equ p1.0
+mov b,#1
+
+loop:
+	inc a
+	cjne a,b,less_or_greater
+	jmp loop
+less_or_greater:
+	jc greater
+less:
+	clr p1.0
+	jmp loop
+greater:
+	setb p1.0
+	jmp loop
+end
