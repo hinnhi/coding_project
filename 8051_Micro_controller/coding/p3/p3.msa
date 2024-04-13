@@ -1,0 +1,18 @@
+org 8200h
+
+loop:
+	cpl P1.0
+	call srit
+	jmp loop
+	
+srit:
+	mov r2,#4
+L2:
+	mov r1,#220
+L1:
+	mov r0,#0
+	djnz r0,$
+	djnz r1,L1
+	djnz r2,L2
+	ret
+end
