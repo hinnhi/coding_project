@@ -1,0 +1,22 @@
+org 8200h
+
+loop:
+	clr P1.7
+	inc A
+	rl A
+	call rits
+	setb P1.7
+	dec A	
+	rl A
+	call loop
+rits:
+	mov r2,#4
+L2:
+	mov r1,#220
+L1:
+	mov r0,#0
+	djnz r0,$
+	djnz r1,L1
+	djnz r2,L2
+	ret
+end
