@@ -1,0 +1,9 @@
+org 8200h
+
+loop:
+	cpl P1.0
+	mov r0,#225
+looprit:
+	djnz r0,looprit
+	jmp loop
+end
