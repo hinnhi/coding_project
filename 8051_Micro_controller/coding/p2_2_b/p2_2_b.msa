@@ -1,0 +1,19 @@
+org 8200h
+
+setb p1.0
+
+loop:
+	jb p1.0,$
+	cpl p1.1
+	;jmp rit
+	jnb p1.0,$
+	;jmp rit
+	jmp loop
+
+rit:
+	mov r2,#1
+ld:
+	mov r0,#3
+	djnz r0,$
+	ret
+end

@@ -1,0 +1,40 @@
+org 8200h
+
+setb p1.7
+
+loop:
+	mov dptr,#tab
+	mov r3,#10
+loop1:
+	movx a,@dptr
+	jb p1.7,$
+	mov p1,a
+	call rit
+	jnb p1.7,$
+	call rit
+	inc dptr
+	djnz r3,loop1
+	jmp loop
+
+
+tab:
+	db 11000000b
+	db 11111001b
+	db 10100100b
+	db 10110000b
+	db 10011001b
+	db 10010010b
+	db 10000010b
+	db 11111000b
+	db 10000000b
+	db 10010000b
+
+rit:
+	mov r0,#10
+ld:
+	mov r1,#100
+	djnz r1,$
+	djnz r0,ld
+	ret
+end
+

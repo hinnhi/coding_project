@@ -1,0 +1,22 @@
+C51ASM: advanced C51 macro assembler Version 1.2 (31 May 2011)
+Copyright (C) 2011 Atmel Corp.
+
+
+Pass 1 completed with no warnings and no errors
+
+Pass 2 completed with no warnings and no errors
+
+Segment usage:
+   Code      :      4 bytes
+   Data      :      0 bytes
+   Idata     :      0 bytes
+   Edata     :      0 bytes
+   Fdata     :      0 bytes
+   Xdata     :      0 bytes
+   Bit       :      0 bits
+
+   Register banks used: ---
+
+   Warnings: 0
+   Errors:   0
+

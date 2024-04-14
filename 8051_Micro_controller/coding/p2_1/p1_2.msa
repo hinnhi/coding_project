@@ -1,0 +1,7 @@
+org 8200h
+
+loop:
+	cpl p1.0
+	jmp loop
+
+end
