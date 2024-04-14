@@ -1,0 +1,56 @@
+org 8200h
+
+setb p3.4
+setb p1.7
+mov dptr,#tab
+mov a,#0
+
+loop:
+	mov dptr,#tab
+loop1:
+	jnb p1.7,loop2
+	jnb p3.4,loop3
+	jmp loop1
+	
+loop2:
+	inc acc
+	cjne a, #10, loop4
+	clr p3.5
+	jmp loop1
+loop3:
+	setb p3.4
+	dec acc
+	call visdis
+	jnb p3.4,$
+	jmp loop1
+loop4:
+	call visdis
+	jnb p1.7,$
+	jmp loop1
+visdis:
+	push acc
+	movc a, @a+dptr
+	mov p1,a
+	pop acc
+	ret
+
+tab:
+	db 11000000b
+	db 11111001b
+	db 10100100b
+	db 10110000b
+	db 10011001b
+	db 10010010b
+	db 10000010b
+	db 11111000b
+	db 10000000b
+	db 10010000b
+
+rit:
+	mov r0,#10
+ld:
+	mov r1,#100
+	djnz r1,$
+	djnz r0,ld
+	ret
+end
