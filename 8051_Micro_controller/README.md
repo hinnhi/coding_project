@@ -14,3 +14,44 @@ This chip has the following features:
 - Watchdog...
 
 This chip follows the industry-standard 80C51 instruction set and pin-out. It means that you can replace it by a compatible model from an other supplier, they should work the same way.
+
+### Logical and arithmetic operator:
+```
+ANL A,B   ;and
+ORL A,B   ;or
+XRL A,B   ;exc-or
+CLR A   ;clear accumulator
+CPL A   ;complement accumulator
+
+ADD A,#data   ;add data to accumulator
+SUBB A,#data   ;subb data to accumulator
+INC A   ;increment accumulator
+DEC A   ;decrement accumulator
+MULL A,B   ;multiply A and B
+DIV A,B   ;divide A and B A=quoziente B=resto
+CJNE A,#data,rel   ;compare data to accumulator and jump if not equal
+DJNE A,rel   ;decrease and jump if not zero
+```
+
+### Other:
+```
+ACC   ;accumulator
+B   ;Register B
+PSW   ;State register(flag)
+SP   ;Stack pointer
+Px   ;Port x
+SBUF   ;Serial port data buffer
+```
+
+### Sample code: 
+Read serial port:
+```
+jnb ri,$   ;read the first value
+mov A, SBUF
+clr ri
+jnb ri,$   ;read the second value
+mov B, SBUF
+clr ri
+add A,B   ;add the result in A
+end
+```
